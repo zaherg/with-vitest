@@ -6,7 +6,8 @@ import { fileURLToPath, URL } from 'url';
 export default defineConfig({
   plugins: [react()],
   test: {
-    environment: "node"
+    environment: "node",
+    setupFiles: './__tests__/setup.ts',
   },
   resolve: {
     alias: {
