@@ -1,6 +1,4 @@
 import { expect, test } from "vitest";
-import { createRequest } from "node-mocks-http";
-
 import { GET } from "@/src/api/users/route";
 import { NextRequest } from "next/server";
 
