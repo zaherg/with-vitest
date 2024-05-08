@@ -1,8 +1,10 @@
-import { expect, test } from "vitest";
+import { expect, test, describe } from "vitest";
 import { GET } from "@/src/api/users/route";
 import { NextRequest } from "next/server";
 
-test("User endpoint works as expected with mocking", async () => {
+
+describe("Testing users main route", () => {
+  test("User endpoint works as expected with mocking", async () => {
   const req = new NextRequest('http://doesntmatter', { method: 'GET' });
   const response = await GET(req);
 
@@ -14,3 +16,4 @@ test("User endpoint works as expected with mocking", async () => {
   }]);
   expect(response.status).toBe(200);
 });
+})

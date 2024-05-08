@@ -1,4 +1,3 @@
-import { afterAll, afterEach, beforeAll } from 'vitest'
 import { setupServer } from 'msw/node'
 import { HttpResponse, graphql, http } from 'msw'
 
@@ -30,11 +29,4 @@ const graphqlHandlers = [
 
 const server = setupServer(...restHandlers, ...graphqlHandlers)
 
-// Start server before all tests
-beforeAll(() => server.listen({ onUnhandledRequest: 'bypass' }))
-
-//  Close server after all tests
-afterAll(() => server.close())
-
-// Reset handlers after each test `important for test isolation`
-afterEach(() => server.resetHandlers())
+export { server }
